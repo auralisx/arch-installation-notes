@@ -152,7 +152,7 @@ Btrfs snapshot management is handled through **Snapper** and **snap-pac**.
 - Configure snapper for both `/` (system) and `/home` (user data).
 - Each subvolume was prepared for snapper manually to ensure clean integration with the existing Btrfs layout.
 
-more information about snapper and snap-pac can be found at [snapper](https://wiki.archlinux.org/title/Snapper) and [snap-pac](https://github.com/auralisx/snap-pac).
+more information about snapper and snap-pac can be found at [snapper](https://wiki.archlinux.org/title/Snapper).
 
 ---
 
