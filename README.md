@@ -114,10 +114,10 @@ For subvolumes where a lot of small, frequent writes occur (e.g., /var/log, /var
 - Mounted with `nodatacow` for stability.
 
 **zram:** disabled during installation.
-**zswap:** enabled later as the preferred compression-based swap optimization for 16 GB RAM systems.
+**zswap:** enabled later with btrfs swapfile as the preferred compression-based swap optimization for 16 GB RAM systems.
 
 > [!NOTE]
-> Zswap and Zram shouldn't be used together. You can find more on [ArchWiki](https://wiki.archlinux.org/title/Zram) and [ArchWiki](https://wiki.archlinux.org/title/Zswap). It is noted that if the related zswap kernel feature remains enabled, it will prevent zram from being used effectivily. This is because zswap functions as a swap cache in front of zram, intercepting and compressing evicted memory pages before they can reach zram. Most people opted for Zram because of it's easy use but disabling zswap seems more troublesome. It's also a reason why I choosed Zswap and btrfs swapfile method.
+> Zswap and Zram shouldn't be used together. You can find more on [Zram](https://wiki.archlinux.org/title/Zram) and [Zswap](https://wiki.archlinux.org/title/Zswap). It is noted that if the related zswap kernel feature remains enabled, it will prevent zram from being used effectivily. This is because zswap functions as a swap cache in front of zram, intercepting and compressing evicted memory pages before they can reach zram. Most people opted for Zram because of it's easy use but disabling zswap seems more troublesome. It's also a reason why I choosed Zswap and btrfs swapfile method.
 
 ---
 
@@ -151,6 +151,8 @@ Btrfs snapshot management is handled through **Snapper** and **snap-pac**.
 - **snap-pac** integrates with Pacman to automatically take snapshots before and after package transactions.
 - Configure snapper for both `/` (system) and `/home` (user data).
 - Each subvolume was prepared for snapper manually to ensure clean integration with the existing Btrfs layout.
+
+more information about snapper and snap-pac can be found at [snapper](https://wiki.archlinux.org/title/Snapper) and [snap-pac](https://github.com/auralisx/snap-pac).
 
 ---
 
